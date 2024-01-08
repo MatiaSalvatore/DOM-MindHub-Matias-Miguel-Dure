@@ -43,16 +43,28 @@ for (const fruta of frutas){
 }
 
 //10 y 11.
-function crear_lista(array){
+//function crear_lista(array){
+//    const listas = document.getElementById("lista")
+//    const lista = document.createElement('ul')
+//    for (const fruta of frutas){
+//        if (fruta.esDulce === true){
+//            lista.innerHTML += `<li>${fruta.nombre}</li>`
+//        }
+//    }
+//    listas.appendChild(lista)
+//}
+
+//crear_lista(frutas)
+
+
+function crear_lista2(array){
     const listas = document.getElementById("lista")
     const lista = document.createElement('ul')
-    for (const fruta of frutas){
-        if (fruta.esDulce === true){
-            lista.innerHTML += `<li>${fruta.nombre}</li>`
-        }
-    }
+    const array_object = array.filter(element => element.esDulce === true )
+    array_object.forEach(function(element){
+        lista.innerHTML += `<li>${element.nombre}</li>`
+})
     listas.appendChild(lista)
 }
 
-crear_lista(frutas)
-
+crear_lista2(frutas)
